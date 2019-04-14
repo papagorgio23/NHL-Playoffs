@@ -14,6 +14,14 @@
 
 
 
+# function to compute zscores
+zscore <- function(value, valueMean, valueSD) {
+  score <- (value - valueMean) / valueSD
+  score <- round(pnorm(score, 0, 1) *10, 2)
+  return(score)
+}
+
+
 #Convert cities/nicknames to team abbreviations
 convertNHLnames2Abbreviation <- function(x){
   
